@@ -1,0 +1,8 @@
+{
+    "shortcuts": [
+        { "title": "Git", "id": 1, "details": "Git commands and shortcuts" },
+        { "title": "Linux", "id": 2, "details": "Linux commands and shortcuts" },
+        { "title": "Keyboard - General", "id": 3, "details": "General Keyboard shortcuts" },
+        { "title": "Browser", "id": 4, "details": "Browser shortcuts for Chrome" }
+    ]
+}
