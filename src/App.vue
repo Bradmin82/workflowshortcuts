@@ -54,18 +54,17 @@
         <b-button class="ml-2" variant="primary" @click="add">Add</b-button>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-3">
-        <div class="p-2 alert alert-success">
-          <h3>Shortcuts</h3>
-          <draggable class="list-group shortcut" :list="shortcuts" group="shortcuts">
-            <div class="list-group-item" v-for="shortcut in shortcuts" :key="shortcut.id">
-              {{shortcut.title}}
-              <div style="color: hotpink;">{{shortcut.description}}</div>
-            </div>
-          </draggable>
+    <div class="row shortcuts-container">
+      <draggable class="list-group-s shortcut" :list="shortcuts" group="shortcuts">
+        <div class="list-group-item-s" v-for="shortcut in shortcuts" :key="shortcut.id">
+          <div class="p-2 alert alert-success">
+            <h3>{{shortcut.title}}</h3>
+            
+                <div style="color: hotpink;">{{shortcut.description}}</div>
+            
+          </div>
         </div>
-      </div>
+      </draggable>
     </div>
   </div>
 </template>
@@ -118,5 +117,8 @@ export default {
 <style>
 #app {
   margin-top: 60px;
+}
+#app .shortcuts-container {
+  flex-direction: column;
 }
 </style>
