@@ -63,7 +63,7 @@
                 <div style="color: hotpink;">
                   {{shortcut.description}}
                   <draggable class="list-group" :list="arrBacklog" group="tasks">
-                    <div class="list-group-item" v-for="element in arrBacklog" :key="element.name">
+                    <div style="color: cornflowerblue;" class="list-group-item" v-for="element in arrBacklog" :key="element.name">
                       {{element.name}}
                     </div>
                   </draggable>
