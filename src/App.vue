@@ -50,13 +50,13 @@
     </div>
     <div class="row mb-3">
       <div class="col form-inline">
-        <b-form-input v-model="newShortcut" placeholder="Enter Shortcut" @keyup.enter="add"></b-form-input> 
+        <b-form-input v-model="newShortcut1" placeholder="Enter Shortcut" @keyup.enter="add"></b-form-input> 
         <b-button class="ml-2" variant="primary" @click="add">Add</b-button>
       </div>
     </div>
     <div class="row shortcuts-container">
-      <draggable class="list-group-s shortcut" :list="shortcuts" group="shortcuts">
-        <div class="list-group-item-s" v-for="shortcut in shortcuts" :key="shortcut.id">
+      <draggable class="list-group-s shortcut" :list="shortcuts1" group="shortcuts1">
+        <div class="list-group-item-s" v-for="shortcut in shortcuts1" :key="shortcut.id">
           <div class="p-2 alert alert-success">
             <h3>{{shortcut.title}}</h3>
             
@@ -89,8 +89,8 @@ export default {
       arrInProgress:[],
       arrTested: [],
       arrDone: [],
-      newShortcut: "",
-      shortcuts: []
+      newShortcut1: "",
+      shortcuts1: []
     }
   },
   methods: {
@@ -99,16 +99,16 @@ export default {
         this.arrBacklog.push({name: this.newTask});
         this.newTask="";
       }
-      if(this.newShortcut) {
-        this.shortcuts.push({title: this.newShortcut, description: (this.newShortcut + ' desc')});
-        this.newShortcut="";
+      if(this.newShortcut1) {
+        this.shortcuts1.push({title: this.newShortcut1, description: (this.newShortcut1 + ' desc')});
+        this.newShortcut1="";
       }
     }
   },
   mounted() {
    fetch('http://localhost:3000/shortcuts')
     .then(res => res.json())
-    .then(data => this.shortcuts = data)
+    .then(data => this.shortcuts1 = data)
     .catch(err => console.log(err.message))
   }
 }
