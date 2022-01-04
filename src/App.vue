@@ -61,6 +61,7 @@
           <draggable class="list-group shortcut" :list="shortcuts" group="shortcuts">
             <div class="list-group-item" v-for="shortcut in shortcuts" :key="shortcut.id">
               {{shortcut.title}}
+              <div style="color: hotpink;">{{shortcut.description}}</div>
             </div>
           </draggable>
         </div>
@@ -100,7 +101,7 @@ export default {
         this.newTask="";
       }
       if(this.newShortcut) {
-        this.shortcuts.push({name: this.newShortcut});
+        this.shortcuts.push({title: this.newShortcut, description: (this.newShortcut + ' desc')});
         this.newShortcut="";
       }
     }
